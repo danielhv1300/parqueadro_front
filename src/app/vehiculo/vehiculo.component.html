@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-5">
+          <app-formulario-registro (vehiculoRegistrado)="getVehicles()"></app-formulario-registro>
+      </div>
+      <div class="col-md-7">
+          <app-lista-vehiculos (pagoRegistrado)="marcarPago($event)" (actualizarVehiculo)="sacarVehiculo($event)" [vehiculos]="service.vehiculos" ></app-lista-vehiculos>
+      </div>
+  </div>
+</div>

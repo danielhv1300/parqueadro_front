@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('Mensaje de título', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to parqueadero!');
+    expect(page.getTitleText()).toEqual('Registro Vehículos');
   });
 
   afterEach(async () => {

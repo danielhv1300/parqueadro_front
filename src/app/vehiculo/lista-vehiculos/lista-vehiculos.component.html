@@ -1,0 +1,25 @@
+<hr>
+<h1 class="text-center">Lista de Vehículos</h1>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">PLACA</th>
+            <th scope="col">TIPO VEHÍCULO</th>
+            <th scope="col">CILINDRAJE</th>
+            <th scope="col">FECHA INGRESO</th>
+            <th scope="col">RETIRAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+            <td> {{ vehiculo.placa }} </td>
+            <td>{{ vehiculo.tipoVehiculo }}</td>
+            <td>{{ vehiculo.cilindraje }}</td>
+            <td>{{ vehiculo.fechaIngreso | date: 'dd/MM/yy hh:mm'}}</td>
+            <td *ngIf="!vehiculo.valor"><button class="btn btn-success" id="btnSacar{{vehiculo.placa}}" (click)="sacarVehiculo(vehiculo.placa)">X</button></td>
+            <td *ngIf="vehiculo.valor"><button class="btn btn-danger" id="btnRegistrarPago{{vehiculo.placa}}" (click)="registrarPago(vehiculo.placa)">{{vehiculo.valor}}</button></td>
+        </tr>
+
+    </tbody>
+</table>

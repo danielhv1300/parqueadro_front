@@ -1,0 +1,26 @@
+<hr>
+<h1 class="text-center">Registro Vehículos</h1>
+<hr>
+<form  [formGroup]="formularioRegistro" (submit)="onSubmit()">
+    <div class="form-group">
+        <label class="font-weight-bold" for="placa">PLACA:</label>
+        <input type="text" class="form-control" formControlName="placa" id="placa" name="placa" maxlength="6"  required>
+    </div>
+    <div class="form-group">
+        <label class="font-weight-bold" for="tipoVehiculo">TIPO VEHÍCULO</label>
+        <select class="form-control" name="tipoVehiculo" formControlName="tipoVehiculo" id="tipoVehiculo" required>
+            <option value="CARRO">CARRO</option>
+            <option value="MOTO">MOTO</option>
+        </select>
+    </div>
+    <div class="form-group" *ngIf="formularioRegistro.value.tipoVehiculo === 'MOTO'" >
+        <label class="font-weight-bold" for="cilindraje">CILINDRAJE: </label>
+        <br>
+        <input type="number" class="form-control" formControlName="cilindraje" id="cilindraje" name="cilindraje"
+            type="number" required>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-block btn-success" name="registrarbtn" id="registrarBtn" type="submit"
+            class="btn btn-primary" value="REGISTRAR">REGISTRAR</button>
+    </div>
+</form>
